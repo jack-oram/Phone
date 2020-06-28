@@ -4,12 +4,13 @@
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
-<?php
-echo "My first PHP script!";
-?>
-</body>
-</html>
 
+<table name = "Phones">
+        <tr>
+            <th>ID</th>
+            <th>Model</th>
+            <th>Price</th>
+        </tr>
 <?php
     $connection = mysqli_connect('localhost', 'root', '', 'phones');
     // Check connection
@@ -23,7 +24,8 @@ echo "My first PHP script!";
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
-          echo "id: " . $row["ID"]. " - Name: " . $row["Model"]. " " . $row["Price"]. "<br>";
+          echo "<tr> <th><input type='checkbox'></th><th> " . $row["Model"]. "</th><th> " . $row["Price"]. "</th></tr>";
+
         }
     } else {
         echo "0 results";
@@ -35,16 +37,9 @@ echo "My first PHP script!";
     
 ?>
 
-<html>
-<head></head>
 
-<body>
-    <table name = "Phones">
-        <tr>
-            <th>ID</th>
-            <th>Model</th>
-            <th>Price</th>
-        </tr>
+
+
     </table>
 
 </body>
