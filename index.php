@@ -24,7 +24,9 @@
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                echo "<tr> <th><input type='checkbox'></th><th> " . $row["Model"]. "</th><th> " . $row["Price"]. "</th></tr>";
+                echo "<tr> <th>";
+                echo "<input type='checkbox' value=" . $row["ID"] . " name=ID_" . $row["ID"] . ">";
+                echo "</th><th> " . $row["Model"]. "</th><th> " . $row["Price"]. "</th></tr>";
 
                 }
             } else {
