@@ -1,7 +1,14 @@
 <html>
 <body>
 
-Welcome <?php echo var_dump($_GET); ?><br>
+Welcome 
+<?php
+    foreach($_POST['check_list'] as $selected) {
+        echo "<p>".$selected ."</p>";
+    }
+
+
+?><br>
 
 </body>
 </html>

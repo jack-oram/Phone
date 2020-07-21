@@ -4,7 +4,7 @@
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
-<form action="compare.php">
+<form action="compare.php" method="post">
     <table name = "Phones">
             <tr>
                 <th>ID</th>
@@ -25,7 +25,7 @@
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr> <th>";
-                echo "<input type='checkbox' value=" . $row["ID"] . " name=ID_" . $row["ID"] . ">";
+                echo "<input type='checkbox' value=" . $row["ID"] . " name='check_list[]'>";
                 echo "</th><th> " . $row["Model"]. "</th><th> " . $row["Price"]. "</th></tr>";
 
                 }
