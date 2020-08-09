@@ -33,5 +33,16 @@ Welcome
                 mysqli_close($connection);
 ?>
 
+<h1>My First Heading</h1>
+<?php
+    $elements = array("Model", "Price");
+    echo "<table>";
+    foreach ($elements as $value) {
+       echo "<tr>" ;
+       echo "</tr>";
+     };
+    echo "</table>";
+
+?>
 </body>
 </html>
