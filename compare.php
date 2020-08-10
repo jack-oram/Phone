@@ -35,13 +35,22 @@ Welcome
 
 <h1>My First Heading</h1>
 <?php
+    $connection = mysqli_connect('localhost', 'root', '', 'phones');
     $elements = array("Model", "Price");
     echo "<table>";
     foreach ($elements as $value) {
+        $sql = "SELECT * FROM phones where ID IN (" . implode(",",$_POST['check_list']) . ")";
+        $result = mysqli_query($connection, $sql);
        echo "<tr>" ;
+       echo "<td> " . $value . " </td>" ;
+       while($row = $result->fetch_assoc()) {
+        echo "<td> " . $row[$value] . " </td>" ;
+       }
        echo "</tr>";
      };
     echo "</table>";
+
+    mysqli_close($connection);
 
 ?>
 </body>
