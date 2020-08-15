@@ -1,0 +1,13 @@
+remove the debugging stuff from comparrison page
+
+one at a time, add come new colums of data
+    camera resolution eg 21mp
+    storage eg 64gb
+    5g enabled, yes or no?
+    size of the phone
+    operating system eg andriod or ios?
+add column to the phones table
+populate the row with data from each of the phones
+add the new column to element array
+
+add css styling to the pages
