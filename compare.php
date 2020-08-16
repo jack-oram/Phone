@@ -36,7 +36,7 @@ Welcome
 <h1>My First Heading</h1>
 <?php
     $connection = mysqli_connect('localhost', 'root', '', 'phones');
-    $elements = array("Model", "Price");
+    $elements = array("Model", "Price", "Storage", "Camera Resolution", "5G enabled", "Size of Phone", "Operating System");
     echo "<table>";
     foreach ($elements as $value) {
         $sql = "SELECT * FROM phones where ID IN (" . implode(",",$_POST['check_list']) . ")";
