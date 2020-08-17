@@ -4,6 +4,12 @@
 
 <h1>My First Heading</h1>
 <?php
+    if (count($_POST['check_list']) == 0) {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+?>
+<?php
     $connection = mysqli_connect('localhost', 'root', '', 'phones');
     $elements = array("Model", "Price", "Storage", "Camera Resolution", "5G enabled", "Size of Phone", "Operating System");
     echo "<table>";
