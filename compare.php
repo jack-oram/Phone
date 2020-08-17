@@ -37,5 +37,13 @@
                     </tbody>
                 </table>
         </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form>
+                <input type="button" class ="btn btn-primary" value="Compare More!" onclick="history.back()">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
