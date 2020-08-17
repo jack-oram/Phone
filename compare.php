@@ -6,10 +6,10 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="container">
-
                 <h1>Phone Comparision</h1>
-                <table class="table">
+                <table class="table table-bordered">
+                    <thead>
+                    </thead>
                     <tbody>
                         <?php
                             if (count($_POST['check_list']) == 0) {
@@ -20,7 +20,6 @@
                         <?php
                             $connection = mysqli_connect('localhost', 'root', '', 'phones');
                             $elements = array("Model", "Price", "Storage", "Camera Resolution", "5G enabled", "Size of Phone", "Operating System");
-                            echo "<table>";
                             foreach ($elements as $value) {
                                 $sql = "SELECT * FROM phones where ID IN (" . implode(",",$_POST['check_list']) . ")";
                                 $result = mysqli_query($connection, $sql);
@@ -31,14 +30,12 @@
                             }
                             echo "</tr>";
                             };
-                            echo "</table>";
 
                             mysqli_close($connection);
 
                         ?>
                     </tbody>
                 </table>
-            </div>
         </div>
 </body>
 </html>
