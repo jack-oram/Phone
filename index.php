@@ -13,40 +13,43 @@
             <h1>Phone Comparision Tool</h1>
             <p>Click on the phones you want to compare then click compare!</p>
             <form action="compare.php" method="post">
-                <table name = "Phones">
+                <table name = "Phones" class="table">
+                    <thead>
                         <tr>
                             <th></th>
                             <th>Model</th>
                             <th>Price</th>
                         </tr>
-                    <?php
-                        $connection = mysqli_connect('localhost', 'root', '', 'phones');
-                        // Check connection
-                        if (!$connection) {
-                            die("Connection failed: " . mysqli_connect_error());
-                        }
-
-                        $sql = "SELECT ID, Model, Price FROM phones";
-                        $result = mysqli_query($connection, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            // output data of each row
-                            while($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr> <th>";
-                            echo "<input type='checkbox' value=" . $row["ID"] . " name='check_list[]'>";
-                            echo "</th><th> " . $row["Model"]. "</th><th> " . $row["Price"]. "</th></tr>";
-
+                    </thead>
+                    <tbody>
+                        <?php
+                            $connection = mysqli_connect('localhost', 'root', '', 'phones');
+                            // Check connection
+                            if (!$connection) {
+                                die("Connection failed: " . mysqli_connect_error());
                             }
-                        } else {
-                            echo "0 results";
-                        }
-                        
-                        mysqli_close($connection);
 
-                        
-                        
-                    ?>
+                            $sql = "SELECT ID, Model, Price FROM phones";
+                            $result = mysqli_query($connection, $sql);
 
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr> <td>";
+                                echo "<input type='checkbox' value=" . $row["ID"] . " name='check_list[]'>";
+                                echo "</td><td> " . $row["Model"]. "</td><td> " . $row["Price"]. "</td></tr>";
+
+                                }
+                            } else {
+                                echo "0 results";
+                            }
+                            
+                            mysqli_close($connection);
+
+                            
+                            
+                        ?>
+                    </tbody>
 
 
 
